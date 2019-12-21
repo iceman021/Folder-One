@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery Add / Remove Table Rows Dynamically</title>
+<style type="text/css">
+    form{
+        margin: 20px 0;
+    }
+    form input, button{
+        padding: 5px;
+    }
+    
+    table tr:hover{
+        
+        background-color:#DCDCDC;
+    }
+    
+    table{
+        width: 100%;
+        margin-bottom: 20px;
+		border-collapse: collapse;
+    }
+    table, th, td{
+        border: 1px solid #cdcdcd;
+    }
+    table th, table td{
+        padding: 10px;
+        text-align: left;
+    }
+    
+    th {
+        background-color: yellow;
+    }
+
+    .center {
+    margin: auto;
+    width: 60%;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.hideform {
+    display: none;
+}
+
+    
+</style>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+       
+     
+<script type="text/javascript">
+    $(document).ready(function(){
+       
+        $(".dodaj-row").click(function(){
+            var ime = $("#ime").val();
+            var prezime = $("#prezime").val();
+            var datum = $("#datum").val();
+            var email = $("#email").val();
+            var markup = "<tr><td>" + ime + "</td><td>" + prezime + "</td><td>" + datum + "</td><td>" + email + "</td><td>" + "<input type='checkbox' name='record'></td>" ;
+            $("table tbody").append(markup);
+            
+              $('.center').hide();
+               
+                $('#show').show();
+            $('.delete-row').show();
+            
+        });
+        
+        // Nadji i obrisi funkcija
+        
+     
+        
+        $(".delete-row").click(function(){
+            $("table tbody").find('input[name="record"]').each(function(){
+            	if($(this).is(":checked")){
+                    $(this).parents("tr").remove();
+                }
+            });
+        });
+    });
+
+
+    // Datepicker
+  //  $(document).ready(function () {
+   //     $('#datumi').datepicker();
+ 
+    //        $('#datumi').datepicker("show");        
+   //    
+  //  });
+    //
+</script>
+</head>
+<body>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Ime</th>
+                <th>Prezime</th>
+                <th>Datum rodjenja</th>
+                <th>Email</th>
+                <th>Odaberi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Clark</td>
+                <td>Kent</td>
+                <td>04/03/1996</td>
+                <td>ClarkKent@Gmail.com</td>
+                <td><input type="checkbox" name="record" class="remove"></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="center hideform">
+    <form>
+        <input type="text" id="ime" placeholder="Ime">
+        <input type="text" id="prezime" placeholder="Prezime">
+        <input type="text" id="datumi"  placeholder="Datum rodjenja">
+        <input type="text" id="email" placeholder="Email Address">
+           	<input type="button" class="dodaj-row" value="Sacuvaj">  
+    </form>
+    </div>
+    
+    <button id="show">Dodaj novog klijenta</button>
+    
+    <button type="button" class="delete-row">Obrisi klijenta</button>
+    
+
+
+
+    <script>
+
+
+    $('#show').on('click', function () {
+        $('.center').show();
+        $(this).hide();
+        $('.delete-row').hide();
+    })
+
+    $('#close').on('click', function () {
+        $('.center').hide();
+        $('#show').show();
+        $('.delete-row').show();
+    })
+
+
+    </script>
+</body> 
+
+</html>          
+
+                 

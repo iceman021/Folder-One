@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>JavaScript domaći</title>
+
+    <script type="text/javascript" src="Script1.js"></script>
+
+    <style>
+
+       #cao {
+            font-size:20px;
+        }
+
+    </style>
+
+</head>
+<body id="background" onload="test()">
+
+
+
+    <button type="button" onclick="alert('Welcome!')">Click me!</button><br />
+
+
+    <h1 id="cao"> Hi. </h1>
+
+    <button type="button" onclick="changebgd(), changetext(), changesize()">Change Text!</button><br />
+
+
+
+    <hr align=left size="1" width="100%">
+
+
+    <img src="bulb1.png" id="light" width="300" height="300" onmouseover="lighton()" onmouseout="lightout()"/>
+
+
+    <hr size="1" width="100%">
+
+
+    <form action="#">
+        <p>
+            <label>
+                <input name="Gender" type="radio" />
+                <span>Male</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="Gender" type="radio" />
+                <span>Female</span>
+            </label>
+        </p>
+    </form>
+
+
+
+    <button id="check" type="button" onclick="gender()">Check Selected Gender!</button><br />
+
+
+    <p id="result">
+
+    </p>
+
+
+    <hr size="1" width="100%">
+
+
+
+    <label for="field1">First Name:<input type="text" id="input1" name="field1" value="" /></label> <br />
+    <label for="field2">Last Name:<input type="text" id="input2" name="field1" value="" /></label> <br />
+    <label for="field1">Favourite animal:<input type="text" id="input3" name="field1" value="" /></label> <br /> 
+  
+
+
+
+    <button type="submit" onclick="popup()">Submit</button><br />
+    <button id="showMeBtn" type="button">Show me input</button><br />
+
+
+    <div id="show">
+
+        <p id="1"></p>
+        <p id="2"></p>
+        <p id="3"></p>
+
+    </div>
+
+
+
+    <script>
+        document.getElementById("showMeBtn").addEventListener("click", write);
+    </script>
+
+
+</body>
+
+</html>
+
+
