@@ -1,0 +1,29 @@
+input[type="text"] {
+border: 1px solid dashed;    
+background-color: gold;
+width: 600px;
+padding: .5em;
+font-size: 1em;
+}
+
+input[type="email"] {
+border: 1px solid dashed;    
+background-color: gold;
+width: 600px;
+padding: .5em;
+font-size: 1em;   
+}
+
+
+textarea {
+border: 1px solid dashed;    
+background-color: gold;
+width: 600px;
+padding: .5em;
+font-size: 1em;   
+}
+
+
+.error {
+    color: crimson;
+}
